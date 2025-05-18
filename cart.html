@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - MARA Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
+  <style>
+    body { background: #2d2926; }
+    .cart-header {
+  background: radial-gradient(ellipse at top, #5e050e 0%, #2e0d11 100%);
+  height: 60vh;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+}
+
+.cart-breadcrumb {
+  font-size: 1.1rem;
+  margin-top: 12px;
+  font-size: 1.1rem;
+}
+    .cart-main-box {
+      background: #d1c7bc;
+      max-width: 100%;
+      margin: 0 auto 40px auto;
+      padding: 40px 36px 36px 36px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    }
+    .cart-title {
+      color: #5a2323;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-family: 'Playfair Display', serif;
+      color: #5a2323;
+    }
+    .cart-table th, .cart-table td {
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .cart-table th {
+      font-weight: 700;
+      border-bottom: 2px solid #bbaea1;
+    }
+    .cart-table td {
+      border-bottom: 1px solid #bbaea1;
+      vertical-align: middle;
+    }
+    .cart-table img {
+      width: 38px;
+      height: 60px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 2px;
+      margin-right: 8px;
+    }
+    .cart-remove {
+      color: #5a2323;
+      font-size: 1.3rem;
+      cursor: pointer;
+      font-weight: 700;
+      background: none;
+      border: none;
+      margin-right: 8px;
+    }
+    .cart-qty {
+      width: 48px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #5a2323;
+      font-family: 'Playfair Display', serif;
+    }
+    .cart-update-btn {
+      background: #5a2323;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 2px;
+      padding: 10px 38px;
+      margin: 18px 0 0 0;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: block;
+    }
+    .cart-update-btn:hover { background: #7a2323; }
+    .cart-totals-title {
+      color: #5a2323;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 36px 0 12px 0;
+    }
+    .cart-totals-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-family: 'Playfair Display', serif;
+      color: #5a2323;
+    }
+    .cart-totals-table td {
+      padding: 10px 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #bbaea1;
+    }
+    .cart-totals-table tr:last-child td {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .cart-checkout-btn {
+      background: none;
+      color: #5a2323;
+      border: 2px solid #5a2323;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 2px;
+      padding: 10px 38px;
+      margin: 18px 0 0 0;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      display: block;
+    }
+    .cart-checkout-btn:hover {
+      background: #5a2323;
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .cart-main-box { padding: 5px 2vw 30px 2vw; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">MARA</div>
+    <ul class="nav-links">
+      <li id="nav-home" class="nav-home">Home</li>
+      <li id="nav-about">About us</li>
+      <li id="nav-services">Services</li>
+      <li id="nav-booking">Booking</li>
+      <li id="nav-shop" class="nav-shop">Shop</li>
+      <li id="nav-contact">Contact</li>
+    </ul>
+    <div class="nav-icons">
+      <span class="cart" id="cart-icon">&#128722;<span class="cart-badge" id="cart-badge">0</span></span>
+      <span class="menu">&#8942;</span>
+    </div>
+  </nav>
+  <div class="cart-header">
+    <div>CART</div>
+    <div class="cart-breadcrumb">Home &gt; Cart</div>
+  </div>
+  <div class="cart-main-box">
+    <div class="cart-title">CART DETAILS</div>
+    <table class="cart-table" id="cart-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      </tbody>
+    </table>
+    <button class="cart-update-btn" id="cart-update-btn">Update Cart</button>
+    <div class="cart-totals-title">CART TOTALS</div>
+    <table class="cart-totals-table">
+      <tr>
+        <td>SUBTOTAL</td>
+        <td id="cart-subtotal" style="text-align:right;"></td>
+      </tr>
+      <tr>
+        <td>TOTAL</td>
+        <td id="cart-total" style="text-align:right;"></td>
+      </tr>
+    </table>
+    <button class="cart-checkout-btn" id="cart-checkout-btn">Proceed To Checkout</button>
+  </div>
+  <footer class="footer-section">
+    <div class="footer-main">
+      <div class="footer-logo-col">
+        <div class="footer-logo">MARA<br><span class="footer-sub">BEAUTY SALON</span></div>
+        <div class="footer-socials">
+          <a href="#"><span class="footer-icon"><i class="fab fa-facebook-f"></i></span></a>
+          <a href="#"><span class="footer-icon"><i class="fab fa-instagram"></i></span></a>
+          <a href="#"><span class="footer-icon"><i class="fab fa-twitter"></i></span></a>
+        </div>
+      </div>
+      <div class="footer-divider-vert"></div>
+      <div class="footer-col">
+        <div class="footer-title">About</div>
+        <div class="footer-link">Who we are</div>
+        <div class="footer-link">Our mission</div>
+        <div class="footer-link">What we serve</div>
+        <div class="footer-link">Appointment</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Services</div>
+        <div class="footer-link">Hair and more</div>
+        <div class="footer-link">Nails and more</div>
+        <div class="footer-link">Micro and more</div>
+        <div class="footer-link">Lash lifting and more</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Contact</div>
+        <div class="footer-link">Phone</div>
+        <div class="footer-link">+965 5522 4478</div>
+        <div class="footer-link">Location</div>
+        <div class="footer-link">523 Main Street, Kuwait city</div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <span>Pricing</span>
+        <span>Privacy</span>
+        <span>Refund</span>
+      </div>
+      <div class="footer-copyright">© 2025 mara. All Rights Reserved</div>
+    </div>
+  </footer>
+  <script src="js/cart.js"></script>
+</body>
+</html> 

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - MARA Shop</title>
+  <link rel="stylesheet" href="css/checkoutstyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/checkout.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">MARA</div>
+    <ul class="nav-links">
+      <li id="nav-home" class="nav-home">Home</li>
+      <li id="nav-about">About us</li>
+      <li id="nav-services">Services</li>
+      <li id="nav-booking">Booking</li>
+      <li id="nav-shop" class="nav-shop">Shop</li>
+      <li id="nav-contact">Contact</li>
+    </ul>
+    <div class="nav-icons">
+      <span class="cart" id="cart-icon">&#128722;</span>
+      <span class="menu">&#8942;</span>
+    </div>
+  </nav>
+  <div class="checkout-hero">
+    <div class="checkout-header">CHECKOUT</div>
+    <div class="checkout-breadcrumb">Home <span class="chevron">&gt;</span> Checkout</div>
+  </div>
+  <div class="checkout-main-bg">
+    <div class="checkout-container">
+      <div class="checkout-form-col">
+        <div class="checkout-form-title">Billing Details</div>
+        <form id="checkout-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="name" required>
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" name="lastname" placeholder="last name" required>
+          <label for="country">Country / Region</label>
+          <select id="country" name="country" required>
+            <option value="">Select country</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="UAE">UAE</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Oman">Oman</option>
+          </select>
+          <label for="address">Street Address</label>
+          <input type="text" id="address" name="address" placeholder="house number and street name" required>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+965" required>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="email address" required>
+          <button type="submit" class="checkout-placeorder-btn">Place Order</button>
+        </form>
+      </div>
+      <div class="checkout-order-col">
+        <div class="checkout-order-title">Your Order</div>
+        <table class="checkout-order-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Subtotal</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="order-summary-rows">
+            <!-- Populated by JS -->
+          </tbody>
+          <tfoot>
+            <tr class="checkout-order-total-row">
+              <td colspan="2" style="text-align:right;">Total</td>
+              <td id="order-total" style="font-weight:700; color:#5a2323;">0 KD</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="checkout-payment-box">
+          <div class="checkout-payment-title">Payment Method</div>
+          <div class="checkout-payment-method">
+            <label><input type="radio" name="payment" value="cod" required> Cash On Delivery</label>
+            <label><input type="radio" name="payment" value="bank"> Direct Bank Transfer</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-section">
+    <div class="footer-main">
+      <div class="footer-logo-col">
+        <div class="footer-logo">MARA<br><span class="footer-sub">BEAUTY SALON</span></div>
+        <div class="footer-socials">
+          <a href="#"><span class="footer-icon"><i class="fab fa-facebook-f"></i></span></a>
+          <a href="#"><span class="footer-icon"><i class="fab fa-instagram"></i></span></a>
+          <a href="#"><span class="footer-icon"><i class="fab fa-twitter"></i></span></a>
+        </div>
+      </div>
+      <div class="footer-divider-vert"></div>
+      <div class="footer-col">
+        <div class="footer-title">About</div>
+        <div class="footer-link">Who we are</div>
+        <div class="footer-link">Our mission</div>
+        <div class="footer-link">What we serve</div>
+        <div class="footer-link">Appointment</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Services</div>
+        <div class="footer-link">Hair and more</div>
+        <div class="footer-link">Nails and more</div>
+        <div class="footer-link">Micro and more</div>
+        <div class="footer-link">Lash lifting and more</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Contact</div>
+        <div class="footer-link">Phone</div>
+        <div class="footer-link">+965 5522 4478</div>
+        <div class="footer-link">Location</div>
+        <div class="footer-link">523 Main Street, Kuwait city</div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <span>Pricing</span>
+        <span>Privacy</span>
+        <span>Refund</span>
+      </div>
+      <div class="footer-copyright">© 2025 mara. All Rights Reserved</div>
+    </div>
+  </footer>
+</body>
+</html> 

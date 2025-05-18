@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARA Shop Landing Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="landing-page">
+    <nav class="navbar">
+      <div class="logo">MARA</div>
+      <ul class="nav-links">
+        <li id="nav-home" class="nav-home">Home</li>
+        <li id="nav-about">About us</li>
+        <li id="nav-services">Services</li>
+        <li id="nav-booking">Booking</li>
+        <li id="nav-shop" class="nav-shop active">Shop</li>
+        <li id="nav-contact">Contact</li>
+      </ul>
+      <div class="nav-icons">
+        <span class="cart" id="cart-icon">&#128722;<span class="cart-badge" id="cart-badge">0</span></span>
+        <span class="menu">&#8942;</span>
+      </div>
+    </nav>
+    <section class="hero" style="background-image: url('image/hero-image.png');">
+      <div class="hero-content">
+        <h1>SHOP</h1>
+        <p>Transform Your Look With Our Expert Hair Styling Services, Perfect For Any Occasion.</p>
+        <div class="breadcrumb">
+          <span>Home</span> <span class="chevron">&gt;</span> <span>Shop</span>
+        </div>
+      </div>
+    </section>
+    <!-- Shop Section (from shop.html) -->
+    <div class="main-shop-bg">
+      <div class="shop-tabs">
+        <button class="shop-tab active" data-tab="extension">Extension</button>
+        <button class="shop-tab" data-tab="shampoo">Shampoo</button>
+        <button class="shop-tab" data-tab="equipment">Equipment</button>
+      </div>
+      <div class="shop-subtitle">Showing All Extension Results</div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img-box">
+            <span class="badge sale">-%15</span>
+            <img src='image/hair.png' alt="Dark Brown Extension">
+          </div>
+          <div class="product-info">
+            <div class="product-prices"><span class="old-price">KD 50.00</span> <span class="new-price">KD 30.00</span></div>
+            <span class="stars">★★★★★</span>
+            <div class="product-title">Dark Brown Extension</div>
+            <hr>
+            <button class="add-to-cart-btn">ADD TO CART</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-box">
+            <img src='image/hair.png' alt="Golden Blonde Extension">
+          </div>
+          <div class="product-info">
+            <div class="product-prices"><span class="old-price">KD 55.00</span> <span class="new-price">KD 35.00</span></div>
+            <span class="stars">★★★★★</span>
+            <div class="product-title">Golden Blonde Extension</div>
+            <hr>
+            <button class="add-to-cart-btn">ADD TO CART</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-box">
+            <span class="badge out">Out Of Stock</span>
+            <img src='image/hair.png' alt="Caramel Brown Extension">
+          </div>
+          <div class="product-info">
+            <div class="product-prices"><span class="old-price">KD 60.00</span> <span class="new-price">KD 40.00</span></div>
+            <span class="stars">★★★★★</span>
+            <div class="product-title">Caramel Brown Extension</div>
+            <hr>
+            <button class="add-to-cart-btn" disabled>ADD TO CART</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-box">
+            <span class="badge sale">-%10</span>
+            <img src='image/hair.png' alt="Chestnut Brown Extension">
+          </div>
+          <div class="product-info">
+            <div class="product-prices"><span class="old-price">KD 45.00</span> <span class="new-price">KD 40.50</span></div>
+            <span class="stars">★★★★★</span>
+            <div class="product-title">Chestnut Brown Extension</div>
+            <hr>
+            <button class="add-to-cart-btn">ADD TO CART</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-box">
+            <img src='image/hair.png' alt="Light Brown Extension">
+          </div>
+          <div class="product-info">
+            <div class="product-prices"><span class="old-price">KD 50.00</span> <span class="new-price">KD 32.00</span></div>
+            <span class="stars">★★★★★</span>
+            <div class="product-title">Light Brown Extension</div>
+            <hr>
+            <button class="add-to-cart-btn">ADD TO CART</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-box">
+            <img src='image/hair.png' alt="Natural Black Extension">
+          </div>
+          <div class="product-info">
+            <div class="product-prices"><span class="old-price">KD 48.00</span> <span class="new-price">KD 29.00</span></div>
+            <span class="stars">★★★★★</span>
+            <div class="product-title">Natural Black Extension</div>
+            <hr>
+            <button class="add-to-cart-btn">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="cart.html" style="color:#6d1313; font-family:Montserrat; font-size:1.1rem; font-weight:600; text-decoration:underline;">Go to Cart</a>
+      </div>
+    </div>
+    <!-- End Shop Section -->
+    <!-- Cart Section -->
+    <section class="cart-section" id="cart-section" style="display:none;">
+      <h2>Your Cart</h2>
+      <div class="cart-items"></div>
+      <div class="cart-total"></div>
+      <button class="checkout-btn">Checkout</button>
+      <button class="continue-shopping-btn">Continue Shopping</button>
+    </section>
+    <!-- Checkout Section -->
+    <section class="checkout-section" id="checkout-section" style="display:none;">
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <label>Name:<br><input type="text" name="name" required></label><br><br>
+        <label>Email:<br><input type="email" name="email" required></label><br><br>
+        <label>Address:<br><input type="text" name="address" required></label><br><br>
+        <button type="submit">Place Order</button>
+      </form>
+      <button class="back-to-cart-btn">Back to Cart</button>
+    </section>
+    <div class="order-success" style="display:none; text-align:center; padding:40px;">
+      <h2>Thank you for your order!</h2>
+      <p>Your order has been placed successfully.</p>
+      <button class="back-to-shop-btn">Back to Shop</button>
+    </div>
+    <div id="cart-popup" style="display:none;position:fixed;top:40px;left:50%;transform:translateX(-50%);background:#5a2323;color:#fff;padding:16px 32px;border-radius:8px;font-size:1.2rem;z-index:9999;box-shadow:0 2px 12px rgba(0,0,0,0.18);font-family:'Playfair Display',serif;">Added to cart!</div>
+  </div>
+  <footer class="footer-section">
+    <div class="footer-main">
+      <div class="footer-logo-col">
+        <div class="footer-logo">MARA<br><span class="footer-sub">BEAUTY SALON</span></div>
+        <div class="footer-socials">
+          <a href="#"><span class="footer-icon"><i class="fab fa-facebook-f"></i></span></a>
+          <a href="#"><span class="footer-icon"><i class="fab fa-instagram"></i></span></a>
+          <a href="#"><span class="footer-icon"><i class="fab fa-twitter"></i></span></a>
+        </div>
+      </div>
+      <div class="footer-divider-vert"></div>
+      <div class="footer-col">
+        <div class="footer-title">About</div>
+        <div class="footer-link">Who we are</div>
+        <div class="footer-link">Our mission</div>
+        <div class="footer-link">What we serve</div>
+        <div class="footer-link">Appointment</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Services</div>
+        <div class="footer-link">Hair and more</div>
+        <div class="footer-link">Nails and more</div>
+        <div class="footer-link">Micro and more</div>
+        <div class="footer-link">Lash lifting and more</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Contact</div>
+        <div class="footer-link">Phone</div>
+        <div class="footer-link">+965 5522 4478</div>
+        <div class="footer-link">Location</div>
+        <div class="footer-link">523 Main Street, Kuwait city</div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <span>Pricing</span>
+        <span>Privacy</span>
+        <span>Refund</span>
+      </div>
+      <div class="footer-copyright">© 2025 mara. All Rights Reserved</div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html> 
